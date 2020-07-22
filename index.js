@@ -117,7 +117,7 @@ getGoals();
 
 /* Stretch 4: Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (average goals against) in the World Cup finals */
 
-function badDefense(/* code here */) {
+function badDefense(data) {
   /* code here */
 }
 
@@ -130,7 +130,8 @@ badDefense();
 
 
 function countryHTML(data){
-  return data.map((z) => `<h1>${z['Home Team Name']} VS ${z['Away Team Name']}</h1>`)
+     return data.map((z) => "<h1>" + z['Home Team Name'] + "</h1>" + "<h1>" + z['Away Team Name'] + "</h1>")
+  // return data.map((z) => `<h1>${z['Home Team Name']} VS ${z['Away Team Name']}</h1>`)
 }
 console.log(countryHTML(fifaData))
 
