@@ -130,7 +130,7 @@ badDefense();
 
 
 function countryHTML(data){
-     return data.map((z) => `<h1>${z['Home Team Name']}</h1> <h1>${z['Away Team Name']}`)
+     return data.map((z) => `<h1>${z['Home Team Name']}</h1> <h1>${z['Away Team Name']}</h1>`)
   // return data.map((z) => `<h1>${z['Home Team Name']} VS ${z['Away Team Name']}</h1>`)
 }
 console.log(countryHTML(fifaData))
