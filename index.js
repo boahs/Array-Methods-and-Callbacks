@@ -24,9 +24,10 @@ console.log(result[0]["Away Team Goals"]);
 only finals data */
 
 function getFinals(data) {                    //we're using our data parameter to call fifaData.
-  return data.filter((filterFinals) => {      //We're pointing our callback filterFinals towards the object property 'Stage' 
-    return filterFinals.Stage === "Final";    // We need to remember to use strict equality. It's just best pratice, 
-  });                                         // and less prone to bug.
+  const finalData =  data.filter((filterFinals) =>       //We're pointing our callback filterFinals towards the object property 'Stage' 
+    filterFinals.Stage === "Final"    // We need to remember to use strict equality. It's just best pratice, 
+  );                                         // and less prone to bug.
+  return finalData;
 }
 console.log(getFinals(fifaData));             
 
@@ -68,7 +69,7 @@ Parameters:
 
 function getWinnersByYear(callback, callback2) {  // Our year is our first callback with returns the final winners.
   const year = callback(fifaData, getFinals);     // Same thing with our second constant - country. 
-  const country = callback2(fifaData, getFinals);
+  const country = callback2(fifaData, getFinals); // These will be used to return our getFinals function data from our fifaData.
   const win = [];
 
   year.forEach((years, index) => {      //we're asking for our first callback to return each each country inside fifaData, and year.
@@ -123,3 +124,13 @@ function badDefense(/* code here */) {
 badDefense();
 
 /* If you still have time, use the space below to work on any stretch goals of your chosing as listed in the README file. */
+
+
+// - [ ] Use `.map` to format country names into `<h1>` HTML headers.
+
+
+function countryHTML(data){
+  return data.map((z) => `<h1>  ${z['Home Team Name']} + ${z['Away Team Name']}  </h1>`)
+}
+console.log(countryHTML(fifaData))
+
